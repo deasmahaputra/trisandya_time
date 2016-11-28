@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import info.androidhive.navigationdrawer.R;
@@ -67,7 +69,16 @@ public class TempleFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_temple, container, false);
+        View view =  inflater.inflate(R.layout.fragment_temple, container, false);
+
+        ListView listView = (ListView) view.findViewById(R.id.listViewPura);
+
+        String[] item = new String[] {"Pura Besakih", "Pura Batur", "Pura Pulaki", "Pura Watu Klotok", "Pura Dalem Balingkang"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                getActivity(), android.R.layout.simple_list_item_1, item
+        );
+        listView.setAdapter(adapter);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

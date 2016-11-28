@@ -48,7 +48,7 @@ public class MyAlarmService extends Service{
 //        intent1.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP| Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //
         PendingIntent pendingIntent = PendingIntent.getActivity( this.getApplicationContext(),0, intent1,PendingIntent.FLAG_UPDATE_CURRENT);
-//        notification.flags |= Notification.FLAG_AUTO_CANCEL;
+        //myNotication.flags |= Notification.FLAG_AUTO_CANCEL;
 //        notification.setLatestEventInfo(this.getApplicationContext(), "AlarmManagerDemo", "This is a test message!", pendingNotificationIntent);
         Notification.Builder builder = new Notification.Builder(MyAlarmService.this);
 
@@ -65,6 +65,7 @@ public class MyAlarmService extends Service{
         builder.setVibrate(new long[]{1000,1000,1000,1000,1000});
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.puja);
         builder.setSound(uri);
+
 
         myNotication = builder.getNotification();
 

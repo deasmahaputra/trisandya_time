@@ -5,12 +5,14 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.util.Calendar;
 
@@ -33,6 +35,7 @@ public class AlarmFragment extends Fragment {
     private String mParam2;
     private PendingIntent pendingIntent;
     private TextView textViewEnamPagi, textViewDuabelas, textViewenamSore;
+    private ToggleButton toggleButtonEnamPagi, toggleButtonDuaBelas, toggleButtonEnamSore;
 
     public AlarmFragment() {
         // Required empty public constructor
@@ -71,23 +74,103 @@ public class AlarmFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        startSix();
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_alarm, container, false);
+        View v = inflater.inflate(R.layout.fragment_alarm, container, false);
+        toggleButtonEnamPagi = (ToggleButton) v.findViewById(R.id.toggleButton);
+        //textViewDuabelas = (ToggleButton) getActivity().findViewById(R.id.toggleButton2);
+        textViewEnamPagi = (TextView)   v.findViewById(R.id.textViewalarm);
+        textViewDuabelas = (TextView) v.findViewById(R.id.textView);
+        toggleButtonDuaBelas = (ToggleButton) v.findViewById(R.id.toggleButton2);
 
+        textViewEnamPagi.setText("OFF Pukul 06.00 AM");
+        textViewDuabelas.setText("OFF Pukul 12.00 PM");
+
+        toggleButtonEnamPagi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(toggleButtonEnamPagi.isChecked()){
+                    textViewEnamPagi.setText("ON Pukul 06.00 AM");
+                    SharedPreferences preferences = getActivity().getPreferences(0);
+                    SharedPreferences.Editor edt = preferences.edit();
+                    edt.putBoolean("tgEnam", true);
+                    edt.commit();
+                }else {
+                    textViewEnamPagi.setText("OFF Pukul 06.00 AM");
+                    SharedPreferences preferences = getActivity().getPreferences(0);
+                    SharedPreferences.Editor edt = preferences.edit();
+                    edt.putBoolean("tgEnam", false);
+                    edt.commit();
+                }
+            }
+        });
+
+        toggleButtonDuaBelas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(toggleButtonDuaBelas.isChecked()){
+                    textViewDuabelas.setText("ON Pukul 12.00 PM");
+                    SharedPreferences preferences = getActivity().getPreferences(0);
+                    SharedPreferences.Editor edt = preferences.edit();
+                    edt.putBoolean("tgDuabelas", true);
+                    edt.commit();
+                }else{
+                    textViewDuabelas.setText("OFF Pukul 12.00 PM");
+                    SharedPreferences preferences = getActivity().getPreferences(0);
+                    SharedPreferences.Editor edt = preferences.edit();
+                    edt.putBoolean("tgDuabelas", false);
+                    edt.commit();
+                }
+            }
+        });
+
+
+        startSix();
+        startDuaBelas();
+        // Inflate the layout for this fragment
+    return v;
     }
     public void startSix(){
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.HOUR_OF_DAY, 18);
-        calendar.set(Calendar.MINUTE, 55);
-        calendar.set(Calendar.SECOND, 0);
-        calendar.set(Calendar.AM_PM,Calendar.PM);
+        SharedPreferences preferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+        boolean tgenam = preferences.getBoolean("tgEnam", true);
+        if(tgenam = true){
+            textViewEnamPagi.setText("ON Pukul 06.00 AM");
+            toggleButtonEnamPagi.setChecked(true);
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.HOUR_OF_DAY, 6);
+            calendar.set(Calendar.MINUTE,0);
+            calendar.set(Calendar.SECOND, 0);
+            calendar.set(Calendar.AM_PM,Calendar.AM);
 
-        Intent myIntent = new Intent(getActivity().getApplication(), MyReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(getActivity().getApplication(), 0, myIntent,0);
+            Intent myIntent = new Intent(getActivity().getApplication(), MyReceiver.class);
+            pendingIntent = PendingIntent.getBroadcast(getActivity().getApplication(), 0, myIntent,0);
 
-        AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+            AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+            alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+        }else{
+
+        }
+
+    }
+    public  void startDuaBelas(){
+        SharedPreferences preferences = getActivity().getPreferences(Context.MODE_PRIVATE);
+        boolean tgduabelas = preferences.getBoolean("tgDuabelas", true);
+        if(tgduabelas = true){
+            textViewDuabelas.setText("ON Pukul 12.00 PM");
+            toggleButtonDuaBelas.setChecked(true);
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.HOUR_OF_DAY, 8);
+            calendar.set(Calendar.MINUTE, 0);
+            calendar.set(Calendar.SECOND, 0);
+            calendar.set(Calendar.AM_PM,Calendar.AM);
+
+            Intent myIntent = new Intent(getActivity().getApplication(), MyReceiver.class);
+            pendingIntent = PendingIntent.getBroadcast(getActivity().getApplication(), 0, myIntent,0);
+
+            AlarmManager alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+            alarmManager.set(AlarmManager.RTC, calendar.getTimeInMillis(), pendingIntent);
+        }else{
+            textViewDuabelas.setText("OFF Pukul 12.00 PM");
+
+        }
     }
 
 }
