@@ -22,12 +22,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import alrithm.deastudio.trisandya_time.fragment.AlarmFragment;
 import alrithm.deastudio.trisandya_time.fragment.CalenderFragment;
 import alrithm.deastudio.trisandya_time.fragment.MantramFragment;
 import alrithm.deastudio.trisandya_time.fragment.SettingsFragment;
 import alrithm.deastudio.trisandya_time.fragment.TempleFragment;
 import info.androidhive.navigationdrawer.R;
-import info.androidhive.navigationdrawer.fragment.AlarmFragment;
+
 
 public class MainActivity extends AppCompatActivity {
 
