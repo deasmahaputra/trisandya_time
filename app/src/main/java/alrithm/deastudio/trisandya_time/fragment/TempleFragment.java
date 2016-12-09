@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import info.androidhive.navigationdrawer.R;
@@ -71,13 +69,13 @@ public class TempleFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_temple, container, false);
 
-        ListView listView = (ListView) view.findViewById(R.id.listViewPura);
-
-        String[] item = new String[] {"Pura Besakih", "Pura Batur", "Pura Pulaki", "Pura Watu Klotok", "Pura Dalem Balingkang"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                getActivity(), android.R.layout.simple_list_item_1, item
-        );
-        listView.setAdapter(adapter);
+//        ListView listView = (ListView) view.findViewById(R.id.listViewPura);
+//
+//        String[] item = new String[] {"Pura Besakih", "Pura Batur", "Pura Pulaki", "Pura Watu Klotok", "Pura Dalem Balingkang"};
+//        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+//                getActivity(), android.R.layout.simple_list_item_1, item
+//        );
+//        listView.setAdapter(adapter);
         return view;
     }
 

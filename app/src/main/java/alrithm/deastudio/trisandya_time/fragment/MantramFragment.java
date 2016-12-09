@@ -1,6 +1,7 @@
 package alrithm.deastudio.trisandya_time.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,10 +9,12 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import alrithm.deastudio.trisandya_time.Doa.DoaListSeharihari;
+import alrithm.deastudio.trisandya_time.Doa.DoaListSembahyangActivity;
 import info.androidhive.navigationdrawer.R;
 
 /**
@@ -31,6 +34,7 @@ public class MantramFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button bdoasembahyang, bdoasehari, bdoatempat, bkidung;
 
     private ListView listView;
     private OnFragmentInteractionListener mListener;
@@ -71,16 +75,28 @@ public class MantramFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_mantram, container, false);
-        listView = (ListView) view.findViewById(R.id.listView);
 
-        String [] item = new String[] {"Mantram Sebelum Tidur", "Mantram Sebelum Makan", "Mantram Sebelum Bekerja", "Mantram Mencuci Muka",
-        "Mantram Mensucikan Dupa"};
-        //ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(), android.)
-        ArrayAdapter<String>adapter = new ArrayAdapter<String>(
-                getActivity(), android.R.layout.simple_list_item_1, item
+       bdoasembahyang = (Button) view.findViewById(R.id.doasembahyang);
+        //bdoasembahyang.setBackgroundResource(R.drawable.selector);
+        bdoasehari = (Button) view.findViewById(R.id.doaseharihari);
+        bdoasehari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getActivity(), DoaListSeharihari.class);
+                startActivity(i);
+                Toast.makeText(getActivity(), "List Doa", Toast.LENGTH_SHORT).show();
+            }
+        });
+//        bdoatempat = (ImageButton) view.findViewById(R.id.bDoaTempat);
+//        bkidung = (ImageButton) view.findViewById(R.id.bKidung);
+        bdoasembahyang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), DoaListSembahyangActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        );
-        listView.setAdapter(adapter);
         return view;
     }
 

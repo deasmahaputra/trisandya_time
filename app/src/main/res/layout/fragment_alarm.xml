@@ -1,15 +1,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="info.androidhive.navigationdrawer.fragment.AlarmFragment">
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent">
 
     <AnalogClock
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/analogClock"
-        android:layout_marginTop="38dp"
-        android:layout_below="@+id/textViewalarm"
+        android:layout_marginTop="15dp"
+
         android:layout_centerHorizontal="true" />
 
     <RelativeLayout
@@ -17,42 +16,97 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/analogClock"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:padding="20px">
 
         <ToggleButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New ToggleButton"
+            android:layout_alignParentLeft="true"
             android:id="@+id/toggleButton"
-            android:layout_above="@+id/toggleButton2"
-            android:layout_toLeftOf="@+id/textViewalarm"
-            android:layout_toStartOf="@+id/textViewalarm" />
+            android:drawableTop="@drawable/alarmpressed"
+            android:background="@null"
+            android:paddingLeft="70dp"
 
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textViewalarm"
-            android:layout_alignTop="@+id/toggleButton"
-            android:layout_centerHorizontal="true" />
+            android:id="@+id/textViewEnamPagi"
+            android:layout_alignParentRight="true"
+            android:paddingRight="40dp"
+            android:textSize="16dp"
+            android:text="OFF Pukul 06.00 AM"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Play Trisandya"
+            android:layout_below="@+id/textViewEnamPagi"
+            android:id="@+id/trisandya"
+            android:layout_alignParentRight="true"
+            android:paddingRight="93dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:id="@+id/textView"
+            android:text="OFF Pukul 12.00 PM"
+            android:textSize="16dp"
+            android:paddingRight="40dp"
+            android:layout_below="@+id/toggleButton"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/trisandya2"
+            android:layout_alignParentRight="true"
+            android:paddingRight="93dp"
+            android:layout_below="@+id/textView"
+            android:text="Play Trisandya"/>
 
         <ToggleButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New ToggleButton"
+            android:layout_alignParentLeft="true"
             android:id="@+id/toggleButton2"
-            android:layout_centerVertical="true"
-            android:layout_alignLeft="@+id/toggleButton"
-            android:layout_alignStart="@+id/toggleButton" />
+            android:drawableTop="@drawable/alarmpressed"
+            android:background="@null"
+            android:paddingLeft="70dp"
+            android:layout_below="@+id/toggleButton"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            />
+
+        <ToggleButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:id="@+id/toggleEnamSore"
+            android:drawableTop="@drawable/alarmpressed"
+            android:background="@null"
+            android:paddingLeft="70dp"
+            android:layout_below="@+id/toggleButton2"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OFF Pukul 18.00 PM"
+            android:id="@+id/textEnamSore"
+            android:layout_alignParentRight="true"
+            android:paddingRight="40dp"
+            android:layout_below="@+id/toggleButton2"
+            android:textSize="16dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView"
-            android:layout_centerVertical="true"
-            android:layout_alignLeft="@+id/textViewalarm"
-            android:layout_alignStart="@+id/textViewalarm" />
+            android:id="@+id/trisandya3"
+            android:layout_alignParentRight="true"
+            android:text="Play Trisandya"
+            android:paddingRight="93dp"
+            android:layout_below="@+id/textEnamSore"/>
+
     </RelativeLayout>
 
 </RelativeLayout>

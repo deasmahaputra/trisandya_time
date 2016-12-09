@@ -11,8 +11,8 @@ import android.os.Build;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
-import info.androidhive.navigationdrawer.R;
 import alrithm.deastudio.trisandya_time.activity.MainActivity;
+import info.androidhive.navigationdrawer.R;
 
 /**
  * Created by DEAS on 27/11/2016.
@@ -47,25 +47,26 @@ public class MyAlarmService extends Service{
 //        Notification notification = new Notification(R.drawable.omnew,"This is a test message!", System.currentTimeMillis());
 //        intent1.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP| Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //
-        PendingIntent pendingIntent = PendingIntent.getActivity( this.getApplicationContext(),0, intent1,PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity( this.getApplicationContext(),0, intent1,PendingIntent.FLAG_CANCEL_CURRENT);
         //myNotication.flags |= Notification.FLAG_AUTO_CANCEL;
 //        notification.setLatestEventInfo(this.getApplicationContext(), "AlarmManagerDemo", "This is a test message!", pendingNotificationIntent);
+
         Notification.Builder builder = new Notification.Builder(MyAlarmService.this);
 
-        builder.setAutoCancel(false);
+        builder.getNotification().flags = Notification.FLAG_AUTO_CANCEL;
+        builder.setAutoCancel(true);
         builder.setTicker("this is ticker text");
         builder.setContentTitle("Trisandya Time");
         builder.setContentText("Om Swastyastu");
         builder.setSmallIcon(R.drawable.omnew);
         builder.setContentIntent(pendingIntent);
-        builder.setOngoing(true);
+        //builder.setOngoing(true);
         builder.setSubText("Time to pray");   //API level 16
         builder.setNumber(1);
         builder.build();
         builder.setVibrate(new long[]{1000,1000,1000,1000,1000});
         Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.puja);
         builder.setSound(uri);
-
 
         myNotication = builder.getNotification();
 

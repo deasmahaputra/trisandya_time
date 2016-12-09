@@ -8,13 +8,11 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="alrithm.deastudio.trisandya_time.Doa.DoaListSeharihari">
+    tools:context="alrithm.deastudio.trisandya_time.Doa.DoaListSembahyangActivity">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/listView">
-
-    </ListView>
+        android:id="@+id/listView"></ListView>
 
 </RelativeLayout>

@@ -1,14 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="alrithm.deastudio.trisandya_time.fragment.TempleFragment">
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <ListView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/listViewPura"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/relativetemple">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/besakih"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativetemple"
+        android:paddingTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonpurajagat"
+            android:text="Khayangan Jagat"
+            android:layout_alignParentLeft="true"
+            android:drawableTop="@drawable/kayanganjagatpressed"
+            android:paddingLeft="30dp"
+            android:background="@null"
+            android:gravity="left"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonpuradesa"
+            android:layout_alignParentRight="true"
+            android:text="Khayangan Desa"
+            android:drawableTop="@drawable/puradesapressed"
+            android:paddingRight="30dp"
+            android:background="@null"
+            android:gravity="right"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonpurakawitan"
+            android:layout_alignParentLeft="true"
+            android:text="Kawitan/Dadia"
+            android:paddingLeft="45dp"
+            android:background="@null"
+            android:drawableTop="@drawable/purakawitanpressed"
+            android:layout_below="@+id/buttonpurajagat"
+            android:gravity="left"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonswagina"
+            android:text="Pura Swagina"
+            android:drawableTop="@drawable/puraswaginapressed"
+            android:layout_below="@+id/buttonpuradesa"
+            android:layout_alignParentRight="true"
+            android:paddingRight="40dp"
+            android:background="@null"
+            android:gravity="right"/>
+    </RelativeLayout>
+
 </RelativeLayout>

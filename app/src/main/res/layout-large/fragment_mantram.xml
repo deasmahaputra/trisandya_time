@@ -10,8 +10,8 @@
         android:id="@+id/relative"
         >
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:src="@drawable/dewatabali"
 
             />
@@ -20,15 +20,14 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/relative"
-        android:paddingTop="15dp">
+        android:layout_below="@+id/relative">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Doa Sembahyang"
         android:id="@+id/doasembahyang"
-        android:paddingLeft="30dp"
+        android:paddingLeft="140dp"
         android:drawableTop="@drawable/selector"
         android:background="@null"
         android:gravity="left"/>
@@ -37,9 +36,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/doaseharihari"
-        android:drawableTop="@drawable/pressedsehari"
+        android:drawableTop="@drawable/sehariharipress"
         android:background="@null"
-        android:paddingRight="30dp"
+        android:paddingRight="140dp"
         android:gravity="right"
         android:text="Doa Sehari-hari"
         android:layout_alignParentRight="true"/>
@@ -50,10 +49,10 @@
         android:id="@+id/doatempatsuci"
         android:text="Doa Tempat Suci"
         android:layout_below="@+id/doaseharihari"
-        android:drawableTop="@drawable/pressedtempatsuci"
+        android:drawableTop="@drawable/tempatsucipress"
         android:background="@null"
         android:layout_alignParentLeft="true"
-        android:paddingLeft="35dp"/>
+        android:paddingLeft="145dp"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -62,7 +61,7 @@
         android:text="Nyanyian Suci"
         android:layout_below="@+id/doaseharihari"
         android:drawableTop="@drawable/pressedkidung"
-        android:paddingRight="40dp"
+        android:paddingRight="150dp"
         android:background="@null"
         android:layout_alignParentRight="true"/>
     </RelativeLayout>

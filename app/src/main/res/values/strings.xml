@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">Trisandia Time</string>
     <string name="oms">Om Swastyastu</string>
+    <string name="alrithm">Alrithm Indonesia</string>
+    <string name="alamat">Jl. Adhyaksa 6 No 9a, Bandung</string>
+    <string name="tlpn">Contact : 082126843569 || info@alrithm.id</string>
+    <string name="website">www.alrithm.id</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -25,12 +29,28 @@
     </string-array>
 
     <string name="activity_title_about_us">About Us</string>
-    <string name="activity_title_privacy_policy">Privacy Policy</string>
+    <string name="activity_title_privacy_policy">Doa Sehari-hari</string>
     <string name="action_clear_all">Clear All</string>
     <string name="action_logout">Logout</string>
     <string name="action_mark_all_read">Mark All as Read</string>
     <string name="privacy_policy">Privacy Policy</string>
+    <string name="activity_doa_sembahyang">Doa Sembahyang</string>
+    <string name="activity_doa_view">Doa Sehari-hari</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="doabangunpagijudul">Doa Bangun Pagi</string>
+    <string name="doabangunpagi">Om, Utedanim bhagavantah syamota prapitva uta madhye ahnam, utodinau madhvantan tsuryasya vayam devanam sumantausyama.(Atharva Veda III.16.4)</string>
+    <string name="artidoabangunpagi">“Ya Tuhan Yang Maha Pemurah! Jadikanlah kami selalu bernasib baik pada pagi hari ini, menjelang tengah hari, apalagi matahari tepat di tengah-tengah dan seterusnya. Semoga para Dewa berkenaan menganugharkan rakhmat-Nya kepada kami“</string>
+
+    <string name="doamenggosokgigijudul">Doa Menggosok Gigi</string>
+
+    <string name="doamembersihkanmulutjudul">Doa Membersihkan Mulut</string>
+
+    <string name="doamencucimukajudul">Doa Mencuci Muka</string>
+
+    <string name="doasaatmandijudul">Doa Saat Mandi</string>
+
+
 </resources>

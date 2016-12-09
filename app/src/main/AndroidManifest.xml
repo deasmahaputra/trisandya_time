@@ -11,11 +11,13 @@
         android:icon="@drawable/omsymbol"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        >
         <activity
             android:name="alrithm.deastudio.trisandya_time.activity.MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -24,16 +26,31 @@
         </activity>
         <activity
             android:name="alrithm.deastudio.trisandya_time.activity.AboutUsActivity"
-            android:label="@string/activity_title_about_us" />
+            android:label="@string/activity_title_about_us"
+            android:screenOrientation="portrait"/>
         <activity
-            android:name="alrithm.deastudio.trisandya_time.activity.PrivacyPolicyActivity"
+            android:name="alrithm.deastudio.trisandya_time.Doa.DoaListSeharihari"
             android:label="@string/activity_title_privacy_policy" />
+        <activity
+            android:name="alrithm.deastudio.trisandya_time.Doa.DoaListSembahyangActivity"
+            android:label="@string/activity_doa_sembahyang" />
+        <activity
+            android:name="alrithm.deastudio.trisandya_time.Doa.Details.DoaListSeharihariView"
+            android:label="@string/activity_doa_view" />
         <service android:name="alrithm.deastudio.trisandya_time.Alarm.MyAlarmService"
-            android:enabled="true">
+            android:enabled="true"
+            android:exported="true">
 
         </service>
 
-        <receiver android:name="alrithm.deastudio.trisandya_time.Alarm.MyReceiver">
+        <receiver android:name="alrithm.deastudio.trisandya_time.Alarm.MyReceiver"
+                  android:enabled="true"
+                  android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+        <intent-filter>
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+            <category android:name="android.intent.category.DEFAULT" />
+        </intent-filter>
+
 
         </receiver>
     </application>

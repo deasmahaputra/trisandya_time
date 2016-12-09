@@ -6,4 +6,5 @@
     <color name="colorBasicDark">#900C3F</color>
     <color name="colorBasic">#C70039</color>
     <color name="whitebasic">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>
